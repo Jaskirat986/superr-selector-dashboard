@@ -11,9 +11,9 @@ st.set_page_config(page_title="SupeRR Selector Dashboard", layout="wide")
 def load_and_process_data():
     # Load data
     try:
-        bbb = pd.read_csv('ball_by_ball.csv')
+        bbb = pd.read_csv('ball_by_ball.zip')
     except FileNotFoundError:
-        st.error("Dataset not found. Please ensure 'ball_by_ball.csv' is in the same directory.")
+        st.error("Dataset not found. Please ensure 'ball_by_ball.zip' is in the same directory.")
         return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
 
     bbb = bbb.sort_values(by=['match_id', 'innings', 'innings_ball_num'])
